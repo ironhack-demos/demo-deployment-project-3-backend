@@ -21,8 +21,6 @@ router.post("/projects", isAuthenticated, (req, res, next) => {
 //  GET /api/projects -  Retrieves all of the projects
 router.get("/projects", (req, res, next) => {
 
-  const total = amount * 5;
-
   Project.find()
     .populate("tasks")
     .then((allProjects) => res.json(allProjects))
